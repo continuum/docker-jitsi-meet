@@ -3,7 +3,12 @@ version: '3'
 services:
     # Frontend
     web:
-        build: .
+        build: 
+            args: 
+                - TOOLBAR=${TOOLBAR}
+                - APP_NAME=${APP_NAME}
+                - WATERMARK_URL=${WATERMARK_URL}
+            context: .
         restart: ${RESTART_POLICY}
         ports:
             - '${HTTP_PORT}:80'
