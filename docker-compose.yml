@@ -16,6 +16,7 @@ services:
         volumes:
             - ${CONFIG}/web:/config:Z
             - ${CONFIG}/transcripts:/usr/share/jitsi-meet/transcripts:Z
+            - ./watermark.png:/usr/share/jitsi-meet/images/watermark.png
         environment:
             - ENABLE_LETSENCRYPT
             - ENABLE_HTTP_REDIRECT
